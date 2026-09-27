@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Local OCPP charging station telemetry simulator" />
+    <title>EV charger simulator</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>EV charger simulator</h1>
+        <p>Two charging stations with two connectors each</p>
+      </div>
+      <div class="environment"><span aria-hidden="true"></span>Local</div>
+    </header>
+
+    <main>
+      <section class="read-model" aria-labelledby="read-model-title">
+        <div class="live-line">
+          <span id="api-indicator" class="pulse" aria-hidden="true"></span>
+          <div>
+            <h2 id="read-model-title">Latest status</h2>
+            <p>Updated from the read API every second</p>
+          </div>
+        </div>
+        <div class="sync">
+          <span>Last updated</span>
+          <strong id="last-sync">Waiting for API…</strong>
+        </div>
+      </section>
+
+      <section id="stations" class="stations" aria-live="polite"></section>
+      <p id="error-banner" class="error-banner" role="alert" hidden></p>
+    </main>
+  </body>
+</html>
